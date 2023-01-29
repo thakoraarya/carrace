@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+
 let cars = [
     {
         "Id": 1,
@@ -85,14 +87,13 @@ let cars = [
         "Origin": "USA",
         "status": "buy"
     }
-];
-function Cars() {
+  ];
 
+function Cars() {
     const [selected, setSelected] = useState(null);
 
     return (
         <>
-
             {/* list of cars */}
             <ul className=' flex '>
                 {cars.map(car => (
@@ -109,22 +110,20 @@ function Cars() {
 
             {selected && (
                 <div className="">
-                    <h2>Selected Data</h2>
-                    <p>Name: {setSelected.Name}</p>
-                    <p>Miles per Gallon: {setSelected.Miles_per_Gallon}</p>
-                    <p>Cylinders: {setSelected.Cylinders}</p>
-                    <p>Displacement: {setSelected.Displacement}</p>
-                    <p>Horsepower: {setSelected.Horsepower}</p>
-                    <p>Weight_in_lbs: {setSelected.Weight_in_lbs}</p>
-                    <p>Acceleration: {setSelected.Acceleration}</p>
-                    <p>Year: {setSelected.Year}</p>
-                    <p>Origin: {setSelected.Origin}</p>
-                    <button>status: {setSelected.status}</button>
+                    <h2>Selected Car</h2>
+                    <p>Name: {selected.Name}</p>
+                    <p>Miles per Gallon: {selected.Miles_per_Gallon}</p>
+                    <p>Cylinders: {selected.Cylinders}</p>
+                    <p>Displacement: {selected.Displacement}</p>
+                    <p>Horsepower: {selected.Horsepower}</p>
+                    <p>Weight in lbs: {selected.Weight_in_lbs}</p>
+                    <p>Acceleration: {selected.Acceleration}</p>
+                    <p>Year: {selected.Year}</p>
+                    <p>Origin: {selected.Origin}</p>
                 </div>
             )}
         </>
-    )
-
+    );
 }
 
-export default Cars();
+export default Cars;
