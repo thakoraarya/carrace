@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom'
 
 
 let cars = [
@@ -127,6 +128,17 @@ function Cars() {
                         <p className=' p-1 font-mono font-semibold'>Year: {selected.Year}</p>
                         <p className=' p-1 font-mono font-semibold'>Origin: {selected.Origin}</p>
                     </div>
+                    <button>
+                        {/* <Link to='/race'> */}
+                        <Link to={{ pathname: '/race', state: { selectedCar: selected } }}>
+                        <ul className=' w-fit h-auto text-4xl bg-white border-2 rounded-2xl border-red-300 p-10 my-3 font-semibold'>
+                            <li>S</li>
+                            <li>T</li>
+                            <li>A</li>
+                            <li>R</li>
+                            <li>T</li>
+                        </ul></Link>
+                    </button>
                 </div>
             )}
         </div>
